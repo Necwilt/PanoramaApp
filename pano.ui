@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1440</width>
+    <height>741</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="resultImg">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>871</width>
+      <height>621</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>400</width>
+      <height>400</height>
+     </size>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="lineWidth">
+     <number>1</number>
+    </property>
+    <property name="midLineWidth">
+     <number>1</number>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>imageplaceholder.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>899</x>
+      <y>19</y>
+      <width>231</width>
+      <height>461</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QFrame" name="frame_2">
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QComboBox" name="comboBox">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>137</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+        <item>
+         <property name="text">
+          <string>SURF</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>ORB</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>SIFT</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>BRISK</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>AKAZE</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>161</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Алгоритм поиска точек</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>60</y>
+          <width>211</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Порог доверия соответствия точек&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::AutoText</enum>
+        </property>
+       </widget>
+       <widget class="QDoubleSpinBox" name="match_conf">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>90</y>
+          <width>141</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="singleStep">
+         <double>0.050000000000000</double>
+        </property>
+        <property name="value">
+         <double>0.650000000000000</double>
+        </property>
+       </widget>
+       <widget class="QDoubleSpinBox" name="conf_thresh">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>160</y>
+          <width>141</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="singleStep">
+         <double>0.050000000000000</double>
+        </property>
+        <property name="value">
+         <double>1.000000000000000</double>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_3">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>130</y>
+          <width>231</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Порог уверенности настроек камеры&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::AutoText</enum>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="wave_correct">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>230</y>
+          <width>137</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+        <item>
+         <property name="text">
+          <string>Горизонтальная</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Вертикальная</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Выключить</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QLabel" name="label_4">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>200</y>
+          <width>211</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;коррекция волнового эффекта&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::AutoText</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_5">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>270</y>
+          <width>211</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Форма преобразования панорамы&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::AutoText</enum>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="warp">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>300</y>
+          <width>137</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+        <item>
+         <property name="text">
+          <string>Сферическая</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Цилиндрическая</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Аффинная</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Рыбий глаз</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Стереографическая</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>paniniA1.5B1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>paniniA2B1</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QFrame" name="frame">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>350</y>
+          <width>221</width>
+          <height>80</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QCheckBox" name="crop">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>201</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Обрезка черных пикселей</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="runButton">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>40</y>
+           <width>201</width>
+           <height>28</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Создать панораму</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1440</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Файл</string>
+    </property>
+    <addaction name="loadImages"/>
+    <addaction name="clearImages"/>
+    <addaction name="saveImg"/>
+    <addaction name="separator"/>
+    <addaction name="exit"/>
+   </widget>
+   <widget class="QMenu" name="editMode">
+    <property name="focusPolicy">
+     <enum>Qt::ClickFocus</enum>
+    </property>
+    <property name="title">
+     <string>Режим редактирования</string>
+    </property>
+    <addaction name="editEnable"/>
+   </widget>
+   <widget class="QMenu" name="debugMode">
+    <property name="title">
+     <string>Отладочный режим</string>
+    </property>
+    <addaction name="debugEnable"/>
+   </widget>
+   <widget class="QMenu" name="analyticalMode">
+    <property name="title">
+     <string>Аналитический режим</string>
+    </property>
+    <addaction name="analyticEnable"/>
+   </widget>
+   <widget class="QMenu" name="presets">
+    <property name="title">
+     <string>Предустановленные алгоритмы (пресеты)</string>
+    </property>
+    <addaction name="preset1"/>
+    <addaction name="preset2"/>
+    <addaction name="preset3"/>
+    <addaction name="preset4"/>
+    <addaction name="preset5"/>
+    <addaction name="presetDefault"/>
+   </widget>
+   <widget class="QMenu" name="manualMode">
+    <property name="title">
+     <string>Ручной режим корректировки</string>
+    </property>
+    <addaction name="manualEnable"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="editMode"/>
+   <addaction name="debugMode"/>
+   <addaction name="analyticalMode"/>
+   <addaction name="presets"/>
+   <addaction name="manualMode"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QDockWidget" name="dockWidget">
+   <property name="minimumSize">
+    <size>
+     <width>300</width>
+     <height>300</height>
+    </size>
+   </property>
+   <property name="acceptDrops">
+    <bool>true</bool>
+   </property>
+   <property name="features">
+    <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
+   </property>
+   <property name="windowTitle">
+    <string>Изображения</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="0">
+      <layout class="QVBoxLayout" name="verticalLayout"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="analyticDock">
+   <property name="floating">
+    <bool>false</bool>
+   </property>
+   <property name="features">
+    <set>QDockWidget::NoDockWidgetFeatures</set>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::BottomDockWidgetArea</set>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_2">
+    <property name="minimumSize">
+     <size>
+      <width>1</width>
+      <height>1</height>
+     </size>
+    </property>
+    <widget class="QWidget" name="gridLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>30</y>
+       <width>160</width>
+       <height>89</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="dock_layout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QTextEdit" name="analyticOutput">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+  </widget>
+  <action name="loadImages">
+   <property name="text">
+    <string>Загрузить снимки</string>
+   </property>
+  </action>
+  <action name="clearImages">
+   <property name="text">
+    <string>Очистить загруженные снимки</string>
+   </property>
+  </action>
+  <action name="saveImg">
+   <property name="text">
+    <string>Сохранить изображение</string>
+   </property>
+  </action>
+  <action name="exit">
+   <property name="text">
+    <string>Выход</string>
+   </property>
+  </action>
+  <action name="editEnable">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Включить</string>
+   </property>
+  </action>
+  <action name="editDisable">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Выключить</string>
+   </property>
+  </action>
+  <action name="debugEnable">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Включить</string>
+   </property>
+  </action>
+  <action name="analyticEnable">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Включить</string>
+   </property>
+  </action>
+  <action name="preset1">
+   <property name="text">
+    <string>Классическая панорама (горизонтальная)</string>
+   </property>
+  </action>
+  <action name="preset3">
+   <property name="text">
+    <string>Виртуальные туры</string>
+   </property>
+  </action>
+  <action name="preset4">
+   <property name="text">
+    <string>Виртуальная реальность</string>
+   </property>
+  </action>
+  <action name="preset5">
+   <property name="text">
+    <string>Архитектурная визуализация</string>
+   </property>
+  </action>
+  <action name="presetDefault">
+   <property name="text">
+    <string>По умолчанию</string>
+   </property>
+  </action>
+  <action name="preset2">
+   <property name="text">
+    <string>Классическая панорама (вертикальная)</string>
+   </property>
+  </action>
+  <action name="manualEnable">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Включить</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
